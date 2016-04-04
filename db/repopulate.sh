@@ -6,3 +6,6 @@ scrapy crawl bluebottle
 scrapy crawl intelligentsia
 scrapy crawl heart
 scrapy crawl counterculture
+scrapy crawl stumptown
+scrapy crawl fourbarrel
+scrapy crawl georgehowell
