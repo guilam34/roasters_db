@@ -19,8 +19,8 @@ class GeorgeHowellSpider(scrapy.Spider):
 		for sel in response.xpath('//div[contains(@id, "container")]'):				
 			coffee = CoffeeItem()
 			coffee['roaster'] = "George Howell"
-			coffee['name'] = response.xpath('//h1[contains(@class, "page-title")]/text()').extract()[0]
-			coffee['desc'] = response.xpath('//p[contains(@class, "tasting-notes")]/text()').extract()[0]
+			coffee['name'] = sel.xpath('//h1[contains(@class, "page-title")]/text()').extract()[0]
+			coffee['desc'] = sel.xpath('//p[contains(@class, "tasting-notes")]/text()').extract()[0]
 			coffee['link'] = response.url
 				
 			yield coffee

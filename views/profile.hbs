@@ -1,0 +1,17 @@
+<div id="profile_container">
+	<div id="profile_title">Welcome Gome</div>
+	<br>
+	<div id="likes_container">
+		<div id="likes_title">Likes</div>
+		{{#if coffee}}
+		{{#coffeelist coffee}}	
+		<div class="list-entry">
+			<a target="_blank" class="coffee-link" href="{{link}}""><u><b>{{name}}</b></u></a>
+			<i class="fa {{#if liked}}fa-check{{else}}fa-plus{{/if}} list-entry-like" aria-hidden="true" data-cid="{{_id}}"></i>		
+			<div><b>Roaster</b>: {{roaster}}</div>
+			<div><b>Description</b>: {{desc}}</div>	
+		</div>
+		{{/coffeelist}}
+		{{/if}}
+	</div>
+</div>

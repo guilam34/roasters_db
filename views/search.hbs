@@ -1,12 +1,14 @@
 <div class="container">
 	<form action="./search" method="get" id="results_form">
 		<input class="search_container search_container_small" type="text" name="query">
-		<input class="search_submit search_submit_small" type="submit" value="Submit">
+		<input class="submit search_submit_small" type="submit" value="Submit">
 	</form>
 	<div id="results_query">{{numresults}} matches found for "{{query}}".</div>
-	{{#coffeelist coffee}}
+	<input id="uid" type="hidden" value="{{uid}}">
+	{{#coffeelist coffee}}	
 	<div class="list-entry">
 		<a target="_blank" class="coffee-link" href="{{link}}""><u><b>{{name}}</b></u></a>
+		<i class="fa {{#if liked}}fa-check{{else}}fa-plus{{/if}} list-entry-like" aria-hidden="true" data-cid="{{_id}}"></i>		
 		<div><b>Roaster</b>: {{roaster}}</div>
 		<div><b>Description</b>: {{desc}}</div>	
 	</div>

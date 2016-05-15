@@ -18,7 +18,6 @@ class FourBarrelSpider(scrapy.Spider):
 
 	def parse_dir_contents(self, response):		
 		for sel in response.xpath('//div[contains(@class, "product-details")]'):		
-			print sel;
 			coffee = CoffeeItem()
 			coffee['roaster'] = "Four Barrel"
 			coffee['name'] = sel.xpath('//span[contains(@class, "product_title")]/text()').extract()[0]

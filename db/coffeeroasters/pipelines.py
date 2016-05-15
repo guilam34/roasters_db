@@ -14,10 +14,9 @@ from scrapy import log
 class MongoDBPipeline(object):
     def __init__(self):
         connection = pymongo.MongoClient(
-            settings['MONGODB_SERVER'],
-            settings['MONGODB_PORT']
+            settings['MONGODB_URI']            
         )
-        db = connection[settings['MONGODB_DB']]
+        db = connection.get_default_database()
         self.collection = db[settings['MONGODB_COLLECTION']]
 
     def process_item(self, item, spider):

@@ -17,7 +17,6 @@ class CounterCultureSpider(scrapy.Spider):
 
 	def parse_dir_contents(self, response):		
 		for sel in response.xpath('//div[contains(@class, "product-main-info")]'):		
-			print sel;
 			coffee = CoffeeItem()
 			coffee['roaster'] = "Counter Culture"
 			coffee['name'] = sel.xpath('div[contains(@class, "product-name")]/h1/text()').extract()[0]

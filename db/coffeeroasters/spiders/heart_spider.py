@@ -17,7 +17,6 @@ class HeartSpider(scrapy.Spider):
 
 	def parse_dir_contents(self, response):		
 		for sel in response.xpath('//div[contains(@class, "product-single")]/div[1]/div[2]/div[contains(@class, "wrapper")]'):		
-			print sel;
 			coffee = CoffeeItem()
 			coffee['roaster'] = "Heart"
 			coffee['name'] = sel.xpath('h1/text()').extract()[0]

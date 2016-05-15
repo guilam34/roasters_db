@@ -63,9 +63,7 @@ NEWSPIDER_MODULE = 'coffeeroasters.spiders'
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = ['coffeeroasters.pipelines.MongoDBPipeline', ]
 
-MONGODB_SERVER = "localhost"
-MONGODB_PORT = 27017
-MONGODB_DB = "coffeeroasters"
+MONGODB_URI = 'mongodb://master:master@ds015770.mlab.com:15770/brewscovery_coffee'
 MONGODB_COLLECTION = "Coffee"
 
 # Enable and configure the AutoThrottle extension (disabled by default)

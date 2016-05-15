@@ -1,4 +1,3 @@
-use coffeeroasters
 db.Coffee.drop()
 db.createCollection("Coffee", { autoIndexID: true })
 db.Coffee.createIndex({

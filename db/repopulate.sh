@@ -1,6 +1,6 @@
 #!/bin/sh
 
-mongo < initdb.js
+mongo ds015770.mlab.com:15770/brewscovery_coffee -u master -p master < initdb.js
 scrapy crawl verve
 scrapy crawl bluebottle
 scrapy crawl intelligentsia
